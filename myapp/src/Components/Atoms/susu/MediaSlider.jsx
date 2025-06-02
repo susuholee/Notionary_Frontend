@@ -6,19 +6,20 @@ import { useQuery } from '@tanstack/react-query';
 
 const SliderWrapper = styled.div`
   position: relative;
-  width: 1800px;
-  max-width: 800px;
+  width: 1200px;
+  max-width: 1000px;
   height: 480px;
   margin: 0 auto;
   perspective: 1500px;
   overflow: visible;
+  overflow:hidden;
   .Blockcontent{
     /* display: flex; */
     height: 480px;
     overflow-y: scroll;
   }
   .Blocks{
-    width: 1200px;
+    width: 850px;
   }
 `;
 

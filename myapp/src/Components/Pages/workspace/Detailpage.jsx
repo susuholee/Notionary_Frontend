@@ -24,7 +24,7 @@ const Detailpage = () => {
   // console.log(pagestate, 'pagestate')
   return (
     <Mainwrap>
-      <div className="title">워크스페이스에 환영합니다</div>
+      {/* <div className="title">워크스페이스에 환영합니다</div> */}
       {/* <Header/> */}
       <BlockEditor  />
     </Mainwrap>

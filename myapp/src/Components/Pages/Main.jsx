@@ -37,7 +37,9 @@ const MainWrap = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  width: 80%;
+  width: calc(100% - 300px);
+  overflow: hidden;
+  margin: 0 auto;
   min-height: 100vh;
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   padding-top: 75px; /* 헤더 높이만큼 여백 */

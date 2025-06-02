@@ -8,7 +8,8 @@ import { useDispatch, useSelector } from 'react-redux';
 
 const BlockEditorContainer = styled.div`
   max-width: 800px;
-  margin: 0 auto;
+  margin: 50px auto;
+  margin-bottom: 100px;
   padding: 20px;
   padding-top: 70px;
 `;
@@ -140,6 +141,7 @@ const BlockContent = styled.div`
 
 const Heading = styled.h1`
   margin: 0;
+  color: black;
   font-size: 24px;
   font-weight: bold;
   outline: none;
@@ -186,7 +188,7 @@ const ListItem = styled.li`
 
 const CheckboxBlock = styled.div`
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 8px;
   width: 100%;
 `;
@@ -325,10 +327,11 @@ const BlockEditor = ({ setPagestate, pagestate }) => {
         return
       }
     }
-
     run()
   }, [action, workspacename, foldername, filename])
 
+
+  
   const addBlock = (type, currentId) => {
     const newBlock = {
       id: Date.now(),

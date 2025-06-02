@@ -150,6 +150,7 @@ const PostBlockcontent = async (
   }
   if (imgfile) {
     console.log(data, "axiosdata");
+    console.log("imgfile", imgfile);
     const form = new FormData();
     const dataJson = JSON.stringify(data);
     form.append("data", dataJson);

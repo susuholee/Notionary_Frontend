@@ -8,13 +8,13 @@ import { useQuery } from '@tanstack/react-query';
 
 
 const BlockEditorContainer = styled.div`
-  max-width: 1190px;
-  width: 1190px;
-  margin: 0 auto;
+  /* max-width: 850px; */
+  width: 850px;
+  /* margin: 0 auto; */
   padding: 20px;
   padding-top: 70px;
-  overflow-x: hidden;
-  overflow-y: scroll;
+  /* overflow-x: hidden; */
+  /* overflow-y: scroll; */
 
   .workspacename{
     font-size : 20px;
@@ -23,7 +23,7 @@ const BlockEditorContainer = styled.div`
 `;
 
 const Block = styled.div`
-width: 1000px;
+width: 850px;
   margin-bottom: 8px;
   
 `;

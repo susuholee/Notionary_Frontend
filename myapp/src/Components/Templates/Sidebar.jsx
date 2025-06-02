@@ -184,9 +184,7 @@ const Sidebar = () => {
   const navigate = useNavigate();
   const [state, setState] = useState(false);
   const [teamcontent, setTeamcontent] = useState([{ "팀 워크스페이스": [] }]);
-  const [privatecontent, setPrivatecontent] = useState([
-    { "개인 워크스페이스": [] },
-  ]);
+  const [privatecontent, setPrivatecontent] = useState([{ "개인 워크스페이스": [] }]);
   const queryClient = useQueryClient();
 
   useEffect(() => {
@@ -199,7 +197,9 @@ const Sidebar = () => {
         }
         setState(false);
       } catch (error) {
-        setState(false);
+        setPrivatecontent([{ "개인 워크스페이스": [] }])
+        setState(false)
+        
       }
     };
     getworkspacedata();

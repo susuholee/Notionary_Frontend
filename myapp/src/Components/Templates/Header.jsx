@@ -193,7 +193,7 @@ const Header = () => {
   if (
     location.pathname.startsWith("/workspace") ||
     location.pathname === "/main" ||
-    location.pathname === "/post" ||
+    // location.pathname === "/post" ||
     location.pathname.startsWith("/detail")
   ) {
     return (

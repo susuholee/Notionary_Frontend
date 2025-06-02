@@ -60,7 +60,7 @@ const Popup = ({ children }) => {
   return (
     <Popwrap>
       <Popupbody>
-        <div>삭제하시겠습니까 ??</div>
+        <div>삭제하시겠습니까 ?</div>
         <div>
           <button className="cancelbtn">취소</button>
           <button className="submitbtn">완료</button>

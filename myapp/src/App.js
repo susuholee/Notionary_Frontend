@@ -21,8 +21,9 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Header />
-        <Sidebar />
+      <Header />
+      <Sidebar /> 
+      
         <Routes>
           <Route
             path="/workspace/selectspace/:workspacename/:foldername/:filename"
