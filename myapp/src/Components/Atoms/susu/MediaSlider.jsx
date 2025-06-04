@@ -130,7 +130,7 @@ const MediaSlider = ({ result_id, images = [], videos = [] }) => {
 
   // }, [data])
   const newData = data?.workspacePageData.data.data
-  console.log(Array.isArray(newData), 'newdataarray', newData)
+  // console.log(Array.isArray(newData), 'newdataarray', newData)
 
   return (
     <SliderWrapper>

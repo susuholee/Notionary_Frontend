@@ -35,29 +35,18 @@ const colors = {
 const MainWrap = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-  width: calc(100% - 300px);
-  overflow: hidden;
+  width: 100%;
   margin: 0 auto;
   min-height: 100vh;
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  padding-top: 75px; /* 헤더 높이만큼 여백 */
-  padding-left: 300px; /* 사이드바 너비만큼 여백 */
 
   @media (max-width: 768px) {
     padding-left: 0;
   }
 `;
-const CategoryTitle = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #212529;
-  font-weight: 600;
-  font-size: 18px;
-  margin-bottom: 20px;
-`;
+
 
 const SubCategory = styled.div`
   display: flex;
@@ -141,10 +130,6 @@ const PostWrap = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
 `;
 
 const StyledModal = styled(Modal)`

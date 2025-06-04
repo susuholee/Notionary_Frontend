@@ -7,6 +7,7 @@ import Title from "../../Molecules/susu/Title";
 import MediaSlider from "../../Atoms/susu/MediaSlider";
 import hearticon from "../../../images/icons/hearticon.png";
 import fullheart from "../../../images/icons/fullheart.png";
+import HeartUserList from "./HeartUserList";
 
 const colors = {
   primary: "#667eea",
@@ -25,6 +26,9 @@ const CardBlock = styled.div`
 `;
 
 const Card = styled.div`
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
   border: 1px solid #e9ecef;
   border-radius: 16px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
@@ -449,6 +453,7 @@ function PostCard({
               <img src={liked ? fullheart : hearticon} alt="좋아요" />
               <span>{likeCount}</span>
             </LikeButton>
+             <HeartUserList post_id={post_id} />
           </InteractionBar>
         </ContentWrap>
       </Card>

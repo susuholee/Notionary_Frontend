@@ -10,6 +10,12 @@ const CreateHeart = async ({ uid, post_id }) => {
   return data;
 }
 
+const GetHeartUser = async (post_id) => {
+  const { data } = await axios.get(`${API_BASE_URL}/main/heart/${post_id}`)
+  console.log("좋아요 유저 조회 응답",data)
+  return data
+}
+
 const DeleteHeart = async ({ uid, post_id }) => {
   const {data} = await axios.delete(`${API_BASE_URL}/main/heartDelete`, {
      data: { uid, post_id }
@@ -19,4 +25,4 @@ const DeleteHeart = async ({ uid, post_id }) => {
 }
 
 
-export {CreateHeart, DeleteHeart}
+export {CreateHeart, GetHeartUser,DeleteHeart}

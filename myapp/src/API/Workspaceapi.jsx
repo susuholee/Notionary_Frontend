@@ -5,14 +5,14 @@ import { header } from "../images";
 const WORKSPACE_URL = "http://localhost:4000";
 
 const saveData = async (api, _data) => {
-  console.log("check", _data, api);
+  // console.log("check", _data, api);
   try {
     const token = Cookies.get("authToken");
     const loginAccessToken = Cookies.get("login_access_token");
     const accessToken = token || loginAccessToken;
 
     if (!accessToken) {
-      console.log("토큰이 없습니다");
+      // console.log("토큰이 없습니다");
       return;
     }
 
@@ -26,7 +26,7 @@ const saveData = async (api, _data) => {
         withCredentials: true,
       }
     );
-    console.log(data, "axios");
+    // console.log(data, "axios");
     return { state: 200, message: "success" };
   } catch (error) {
     return { state: 403, message: error };
@@ -40,7 +40,7 @@ const getworkspaceDataOne = async () => {
     const accessToken = token || loginAccessToken;
 
     if (!accessToken) {
-      console.log("토큰이 없습니다");
+      // console.log("토큰이 없습니다");
       return;
     }
     // console.log("axiosget");
@@ -64,7 +64,7 @@ const getworkspaceDataTwo = async () => {
     const accessToken = token || loginAccessToken;
 
     if (!accessToken) {
-      console.log("토큰이 없습니다");
+      // console.log("토큰이 없습니다");
       return;
     }
     // console.log("axiosget");
@@ -89,7 +89,7 @@ const getTextdata = async () => {
     const accessToken = token || loginAccessToken;
 
     if (!accessToken) {
-      console.log("토큰이 없습니다");
+      // console.log("토큰이 없습니다");
       return;
     }
 
@@ -99,7 +99,7 @@ const getTextdata = async () => {
     });
     return data;
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     return error;
   }
 };
@@ -111,7 +111,7 @@ const getWspacecontent = async (wname) => {
     const accessToken = token || loginAccessToken;
 
     if (!accessToken) {
-      console.log("토큰이 없습니다");
+      // console.log("토큰이 없습니다");
       return;
     }
 
@@ -125,10 +125,10 @@ const getWspacecontent = async (wname) => {
         withCredentials: true,
       }
     );
-    console.log(data, "getwspaceconte");
+    // console.log(data, "getwspaceconte");
     return data;
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     return error;
   }
 };
@@ -145,12 +145,12 @@ const PostBlockcontent = async (
   const accessToken = token || loginAccessToken;
 
   if (!accessToken) {
-    console.log("토큰이 없습니다");
+    // console.log("토큰이 없습니다");
     return;
   }
   if (imgfile) {
-    console.log(data, "axiosdata");
-    console.log("imgfile", imgfile);
+    // console.log(data, "axiosdata");
+    // console.log("imgfile", imgfile);
     const form = new FormData();
     const dataJson = JSON.stringify(data);
     form.append("data", dataJson);
@@ -201,7 +201,7 @@ const getBlockcontent = async (workspacename, foldername, filename) => {
   const loginAccessToken = Cookies.get("login_access_token");
   const accessToken = token || loginAccessToken;
   if (!accessToken) {
-    console.log("토큰이 없습니다");
+    // console.log("토큰이 없습니다");
     return;
   }
   const { data: workspaceData } = await axios.get(
@@ -211,10 +211,10 @@ const getBlockcontent = async (workspacename, foldername, filename) => {
       withCredentials: true,
     }
   );
-  console.log(workspaceData, "workspacedata");
+  // console.log(workspaceData, "workspacedata");
   if (workspaceData.data.PageData) {
     const newData = JSON.parse(workspaceData.data.PageData.page_content);
-    console.log(newData);
+    // console.log(newData);
     return newData;
   } else {
     return null;
@@ -226,9 +226,9 @@ const getBlockIdcontent = async (result_id) => {
     const token = Cookies.get("authToken");
     const loginAccessToken = Cookies.get("login_access_token");
     const accessToken = token || loginAccessToken;
-    console.log(accessToken, 'accesstoken')
+    // console.log(accessToken, 'accesstoken')
     if (!accessToken) {
-      console.log("토큰이 없습니다");
+      // console.log("토큰이 없습니다");
       return;
     }
     const { data: workspacePageData } = await axios.post(
@@ -238,23 +238,23 @@ const getBlockIdcontent = async (result_id) => {
         withCredentials: true,
       }
     );
-    console.log(workspacePageData, 'workspacepagedata return')
+    // console.log(workspacePageData, 'workspacepagedata return')
     return ({workspacePageData});
   } catch (error) {
-    console.log(error, 'error111')
+    // console.log(error, 'error111')
     return error
   }
 
 };
 
 const DelWorkspace = async (workspacename, foldername) => {
-  console.log('Delworkspace', workspacename, foldername)
+  // console.log('Delworkspace', workspacename, foldername)
   const token = Cookies.get("authToken");
   const loginAccessToken = Cookies.get("login_access_token");
   const accessToken = token || loginAccessToken;
-  console.log("토큰이 이습니다");
+  // console.log("토큰이 이습니다");
   if (!accessToken) {
-    console.log("토큰이 없습니다");
+    // console.log("토큰이 없습니다");
     return;
   }
   const { data } = await axios.post(`${WORKSPACE_URL}/workspace/delworkspace`,
@@ -269,13 +269,13 @@ const DelWorkspace = async (workspacename, foldername) => {
 
 
 const DelWorkspacepage = async (workspacename, foldername, filename) => {
-  console.log('Delworkspacepage', workspacename, foldername, filename)
+  // console.log('Delworkspacepage', workspacename, foldername, filename)
   const token = Cookies.get("authToken");
   const loginAccessToken = Cookies.get("login_access_token");
   const accessToken = token || loginAccessToken;
-  console.log("토큰이 이습니다");
+  // console.log("토큰이 이습니다");
   if (!accessToken) {
-    console.log("토큰이 없습니다");
+    // console.log("토큰이 없습니다");
     return;
   }
   const { data } = await axios.post(`${WORKSPACE_URL}/workspace/delworkspacepage`,
@@ -292,9 +292,9 @@ const getPagecontent = async (result_id) => {
   const token = Cookies.get("authToken");
   const loginAccessToken = Cookies.get("login_access_token");
   const accessToken = token || loginAccessToken;
-  console.log("토큰이 이습니다");
+  // console.log("토큰이 이습니다");
   if (!accessToken) {
-    console.log("토큰이 없습니다");
+    // console.log("토큰이 없습니다");
     return;
   }
   const data = await axios.get(`${WORKSPACE_URL}/workspace/getpagecontent`, { result_id },

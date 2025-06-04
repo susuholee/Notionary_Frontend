@@ -9,13 +9,11 @@ const colors = {
 };
 
 const CategoriesWrap = styled.div`
-  margin-top: 60px;
+  margin-top: 100px;
   display: flex;
   justify-content: center;
   gap: 16px;
   align-items: center;
-  flex-wrap: wrap;
-  padding: 0 24px;
 `;
 
 const CategoryButton = styled.button`

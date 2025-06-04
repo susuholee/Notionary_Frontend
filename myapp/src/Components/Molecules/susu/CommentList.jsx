@@ -12,13 +12,15 @@ const colors = {
 };
 
 const CommentPanel = styled.div`
+  width: 100%;          /* 부모 너비에 꽉 차게 */
+  max-width: 800px;     /* 최대 너비 제한 */
   border: 1px solid #e9ecef;
   border-radius: 16px;
   background: #fafbfc;
   max-height: 320px;
-  overflow: auto;
+  overflow-y: auto;     /* 수직 스크롤만 */
   transition: all 0.3s ease;
-  margin-top: -16px;
+  margin: 0 auto;
   position: relative;
 
   /* 스크롤바 스타일링 */
@@ -40,6 +42,7 @@ const CommentPanel = styled.div`
     }
   }
 `;
+
 
 const CommentSection = styled.div`
   padding: 20px 24px;

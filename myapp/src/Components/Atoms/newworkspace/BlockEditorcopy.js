@@ -312,15 +312,15 @@ const BlockEditorcopy = ({el}) => {
   useEffect(() => {
     const run = async () => {
       if (el) {
-        console.log('blocksdd',el,el.page_content,'ddddd', el.page_name)
+        // console.log('blocksdd',el,el.page_content,'ddddd', el.page_name)
           setBlocks(JSON.parse(el.page_content))
           // setBlockstate(true)
           // setBlockstate(false)
           // setPagestate(false)
-          console.log(Array.isArray(blocks), blocks, 'blo23231', Array.isArray(el), 'asds', el)
+          // console.log(Array.isArray(blocks), blocks, 'blo23231', Array.isArray(el), 'asds', el)
       }
       else {
-        console.log('sss')
+        // console.log('sss')
         setBlocks([
           { id: 1, type: 'text', content: '', checked: false },
         ])
@@ -556,12 +556,12 @@ const BlockEditorcopy = ({el}) => {
 
   const handleImageUpload = (e, blockId) => {
     const file = e.target.files[0];
-    console.log(file.name, 'file')
+    // console.log(file.name, 'file')
     if (file) {
       const reader = new FileReader();
       reader.onload = async (event) => {
 
-        console.log("12312312eventevent", event)
+        // console.log("12312312eventevent", event)
         setBlocks(blocks.map(block => block.id === blockId ? { ...block, content: event.target.result } : block
         ));
         await PostBlockcontent(workspacename, foldername, filename, { data: blocks }, file, blockId);

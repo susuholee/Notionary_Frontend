@@ -271,7 +271,7 @@ useEffect(() => {
           const result = workspaceDatas
             .filter(item => workspacePages?.includes(item.workspace_id))
             .map(item => item.workspacesubctgrs_name);
-          console.log('type11', result, 'sdfd', workspacePages)
+          // console.log('type11', result, 'sdfd', workspacePages)
           return (
             <AnimatedCardWrapper
               key={post.post_id}
@@ -292,7 +292,7 @@ useEffect(() => {
                 hearts={post.Hearts || []}
                 parent_id={post.Workspacectgr?.parent_id || ""}
                 workspaceCtgrName={
-                  post.Workspacectgr?.workspacectgrs_name ||
+                post.Workspacectgr?.workspacectgrs_name ||
                   "워크 스페이스 없음"
                 }
                 // workspaceSubCtgrName={post.Workspacectgr?.workspacesubctgrs_name || "페이지 없음"}
